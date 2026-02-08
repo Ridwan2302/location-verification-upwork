@@ -14,118 +14,165 @@
         }
 
         :root {
-            --navy: #0A1A5E;
-            --navy-light: #1A2B7A;
-            --navy-dark: #050E35;
+            --navy: #E8EBF5;
+            --navy-light: #F0F2FA;
+            --navy-dark: #0A1A5E;
             --white: #FFFFFF;
-            --gray-light: #F5F7FA;
+            --gray-light: #F8F9FC;
             --gray: #6B7280;
             --gray-dark: #374151;
-            --accent: #3B82F6;
-            --success: #10B981;
+            --accent: #0A1A5E;
+            --success: #0A1A5E;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: var(--white);
+            background-color: var(--navy);
             color: var(--gray-dark);
             line-height: 1.6;
             font-weight: 300;
             min-height: 100vh;
+            padding: 16px;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 24px;
-            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
         }
 
         .container {
-            max-width: 800px;
+            max-width: 480px;
             width: 100%;
             background: var(--white);
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(10, 26, 94, 0.08);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(10, 26, 94, 0.06);
             overflow: hidden;
             position: relative;
         }
 
         /* Header */
         .header {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #1A2B7A 100%);
             color: var(--white);
-            padding: 40px 48px;
+            padding: 32px 24px;
+            text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
-            border-radius: 50%;
-            transform: translate(30%, -30%);
         }
 
         .logo {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            width: 24px;
+            height: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
         }
 
         .logo-text {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 600;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 26px;
             font-weight: 500;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            margin-bottom: 10px;
         }
 
         .subheadline {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 300;
             opacity: 0.9;
-            max-width: 600px;
+            line-height: 1.5;
+            max-width: 360px;
+            margin: 0 auto;
         }
 
-        /* Main Content */
+        /* Progress */
+        .progress-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 28px 24px 0;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 14px;
+            border: 2px solid var(--navy);
+            transition: all 0.3s ease;
+        }
+
+        .step-active .step-number {
+            background: var(--accent);
+            color: var(--white);
+            border-color: var(--accent);
+        }
+
+        .step-text {
+            font-size: 12px;
+            color: var(--gray);
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .step-active .step-text {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .step-connector {
+            flex: 1;
+            height: 2px;
+            background: var(--navy);
+            max-width: 40px;
+        }
+
+        /* Content */
         .content {
-            padding: 48px;
+            padding: 28px 24px;
         }
 
         .verification-box {
-            background: var(--gray-light);
+            background: var(--navy-light);
             border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 32px;
-            border: 1px solid rgba(10, 26, 94, 0.05);
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(10, 26, 94, 0.08);
         }
 
         .verification-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 500;
-            color: var(--navy);
+            color: var(--accent);
             margin-bottom: 16px;
             display: flex;
             align-items: center;
@@ -137,25 +184,25 @@
         }
 
         .verification-text {
-            font-size: 16px;
-            line-height: 1.7;
-            margin-bottom: 32px;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
             color: var(--gray-dark);
         }
 
         .requirements {
             background: var(--white);
             border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 32px;
-            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin-bottom: 24px;
+            border-left: 3px solid var(--accent);
         }
 
         .requirements-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
-            color: var(--navy);
-            margin-bottom: 16px;
+            color: var(--accent);
+            margin-bottom: 14px;
         }
 
         .requirement-list {
@@ -163,43 +210,44 @@
         }
 
         .requirement-list li {
-            padding: 10px 0;
+            padding: 8px 0;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 12px;
-            font-size: 15px;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
         .requirement-list i {
-            color: var(--navy);
+            color: var(--success);
             font-size: 14px;
-            min-width: 20px;
+            margin-top: 2px;
         }
 
-        /* CTA Button */
+        /* Button */
         .cta-button {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #1A2B7A 100%);
             color: var(--white);
             border: none;
             border-radius: 12px;
             font-size: 16px;
             font-weight: 500;
-            padding: 18px 36px;
+            padding: 18px 24px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             width: 100%;
             margin-bottom: 16px;
-            box-shadow: 0 4px 12px rgba(10, 26, 94, 0.2);
+            box-shadow: 0 4px 12px rgba(10, 26, 94, 0.15);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(10, 26, 94, 0.25);
+            box-shadow: 0 6px 16px rgba(10, 26, 94, 0.2);
         }
 
         .cta-button:active {
@@ -208,7 +256,7 @@
 
         .button-subtext {
             text-align: center;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray);
             margin-bottom: 8px;
         }
@@ -216,20 +264,20 @@
         /* Footer */
         .footer {
             border-top: 1px solid rgba(10, 26, 94, 0.08);
-            padding: 32px 48px;
+            padding: 20px 24px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            gap: 20px;
+            background: var(--navy-light);
             flex-wrap: wrap;
-            gap: 16px;
-            background: var(--gray-light);
         }
 
         .security-info {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray);
         }
 
@@ -238,118 +286,9 @@
         }
 
         .compliance-info {
-            font-size: 14px;
-            color: var(--navy);
-            font-weight: 500;
-        }
-
-        /* Progress indicator */
-        .progress-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 40px;
-        }
-
-        .progress-step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .step-number {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--gray-light);
-            color: var(--gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
-            font-size: 14px;
-            border: 2px solid var(--gray-light);
-        }
-
-        .step-active .step-number {
-            background: var(--navy);
-            color: var(--white);
-            border-color: var(--navy);
-        }
-
-        .step-text {
             font-size: 13px;
-            color: var(--gray);
-            text-align: center;
-        }
-
-        .step-active .step-text {
-            color: var(--navy);
+            color: var(--accent);
             font-weight: 500;
-        }
-
-        .step-connector {
-            width: 40px;
-            height: 2px;
-            background: var(--gray-light);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                border-radius: 16px;
-            }
-            
-            .header, .content {
-                padding: 32px 24px;
-            }
-            
-            h1 {
-                font-size: 28px;
-            }
-            
-            .subheadline {
-                font-size: 16px;
-            }
-            
-            .verification-box {
-                padding: 24px;
-            }
-            
-            .footer {
-                padding: 24px;
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .progress-container {
-                gap: 16px;
-            }
-            
-            .step-connector {
-                width: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 16px;
-            }
-            
-            h1 {
-                font-size: 24px;
-            }
-            
-            .verification-title {
-                font-size: 18px;
-            }
-            
-            .cta-button {
-                padding: 16px 24px;
-                font-size: 15px;
-            }
         }
 
         /* Animations */
@@ -359,33 +298,12 @@
         }
 
         .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
+            animation: fadeIn 0.5s ease-out forwards;
         }
 
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        .delay-5 { animation-delay: 0.5s; }
-
-        /* Additional info box */
-        .info-box {
-            background: rgba(59, 130, 246, 0.05);
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 24px;
-            border: 1px solid rgba(59, 130, 246, 0.1);
-            font-size: 14px;
-            color: var(--navy);
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .info-box i {
-            color: var(--accent);
-            margin-top: 2px;
-        }
     </style>
 </head>
 <body>
@@ -401,59 +319,51 @@
             
             <h1 class="fade-in delay-1">U.S. Regional Compliance</h1>
             <div class="subheadline fade-in delay-2">
-                This portal is used to verify the geographical eligibility of applicants for our Virtual Assistant position.
+                This portal is to verify the geographical eligibility of applicants for our Virtual Assistant position.
             </div>
         </div>
 
-        <!-- Main Content -->
-        <div class="content">
-            <!-- Progress Indicator -->
-            <div class="progress-container fade-in delay-1">
-                <div class="progress-step step-active">
-                    <div class="step-number">1</div>
-                    <div class="step-text">Verification task</div>
-                </div>
-                <div class="step-connector"></div>
-                <div class="progress-step">
-                    <div class="step-number">2</div>
-                    <div class="step-text">IP Analysis</div>
-                </div>
-                <div class="step-connector"></div>
-                <div class="progress-step">
-                    <div class="step-number">3</div>
-                    <div class="step-text">Confirmation</div>
-                </div>
+        <!-- Progress Indicator -->
+        <div class="progress-container fade-in delay-1">
+            <div class="progress-step step-active">
+                <div class="step-number">1</div>
+                <div class="step-text">Verification</div>
             </div>
+            <div class="step-connector"></div>
+            <div class="progress-step">
+                <div class="step-number">2</div>
+                <div class="step-text">IP Analysis</div>
+            </div>
+            <div class="step-connector"></div>
+            <div class="progress-step">
+                <div class="step-number">3</div>
+                <div class="step-text">Confirmation</div>
+            </div>
+        </div>
 
-            <!-- Verification Box -->
+        <!-- Content -->
+        <div class="content">
             <div class="verification-box fade-in delay-2">
                 <div class="verification-title">
                     <i class="fas fa-map-marker-alt"></i>
                     Location Verification Protocol
                 </div>
                 <div class="verification-text">
-                    To proceed with your application, you have to complete a location verification to prove that you truly live in the USA. Our system will analyze your submission and ensure it originates from a verified U.S.A based IP address.
+                    To proceed with your application, you have to complete a location verification to proof that you truly live in the USA. Our system will analyze your submission and ensure it originates from a verified U.S.A based IP address.
                 </div>
                 
                 <div class="requirements">
-                    <div class="requirements-title">Verification steps:</div>
+                    <div class="requirements-title">Verification:</div>
                     <ul class="requirement-list">
-                        <li><i class="fas fa-circle"></i> Complete the verification</li>
-                        <li><i class="fas fa-circle"></i> Capture a screenshot of the verified page</li>
-                        <li><i class="fas fa-circle"></i> And attach the screenshot to your proposal on Upwork</li>
+                        <li><i class="fas fa-check-circle"></i> Complete the verification</li>
+                        <li><i class="fas fa-check-circle"></i> Capture a screenshot of the verified page</li>
+                        <li><i class="fas fa-check-circle"></i> And attach the screenshot to your upwork proposal</li>
                     </ul>
                 </div>
 
-                <div class="info-box fade-in delay-3">
-                    <i class="fas fa-info-circle"></i>
-                    <div>
-                        This verification is mandatory for all Virtual Assistant applicants. Your IP address will be analyzed for geographic authenticity.
-                    </div>
-                </div>
-
-                <a href="YOUR_CPA_LINK_HERE" class="cta-button fade-in delay-4">
+                <a href="https://lockedapp.space/cl/i/rnng8v" target="_blank" class="cta-button fade-in delay-3">
                     <i class="fas fa-play-circle"></i>
-                    START VERIFICATION PROCESS
+                    START VERIFICATION
                 </a>
                 <div class="button-subtext">
                     Estimated completion time: 1-2 minutes • No signup required
@@ -463,19 +373,19 @@
 
         <!-- Footer -->
         <div class="footer">
-            <div class="security-info fade-in delay-5">
+            <div class="security-info fade-in delay-1">
                 <i class="fas fa-lock"></i>
                 Secure 256-bit Encryption
             </div>
-            <div class="compliance-info fade-in delay-5">
-                Regional Compliance Office • Est. 2018
+            <div class="compliance-info fade-in delay-2">
+                Regional Compliance Office
             </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Add smooth interactions
+            // Button hover effects
             const ctaButton = document.querySelector('.cta-button');
             
             ctaButton.addEventListener('mouseenter', function() {
@@ -486,29 +396,23 @@
                 this.style.transform = 'translateY(0)';
             });
             
-            ctaButton.addEventListener('mousedown', function() {
-                this.style.transform = 'translateY(0)';
-            });
-            
-            ctaButton.addEventListener('mouseup', function() {
-                this.style.transform = 'translateY(-2px)';
-            });
-
-            // Add loading state to button
+            // Add click animation
             ctaButton.addEventListener('click', function(e) {
+                // Briefly show loading state
                 const originalHTML = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> INITIATING VERIFICATION...';
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening...';
                 this.style.pointerEvents = 'none';
                 
-                // In production, this would navigate to CPA link
-                // For demo, reset after 1.5 seconds
+                // Reset after short delay (link will open in new tab)
                 setTimeout(() => {
                     this.innerHTML = originalHTML;
                     this.style.pointerEvents = 'auto';
-                }, 1500);
+                }, 1000);
+                
+                // Note: The link will open in new tab due to target="_blank"
             });
 
-            // Animate progress steps
+            // Progress animation
             const steps = document.querySelectorAll('.progress-step');
             let currentStep = 0;
             
@@ -525,30 +429,17 @@
                 if (currentStep === 0) currentStep = 1;
             }
             
-            // Simulate progress updates
-            setInterval(updateProgress, 3000);
+            // Start progress animation
+            setInterval(updateProgress, 2500);
 
-            // Add subtle animations to elements on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe elements for scroll animation
-            document.querySelectorAll('.verification-box, .requirements, .info-box').forEach(el => {
+            // Add fade-in effect for mobile
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
                 el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.6s ease';
+                    el.style.opacity = '1';
+                }, 100);
             });
         });
     </script>
